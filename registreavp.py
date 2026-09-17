@@ -51,6 +51,14 @@ with onglet3:
     with st.expander("🧠 TÊTE (Crâne, cerveau)"):
         tc = st.radio("Notion de traumatisme crânien ?", ["Non", "Oui"], horizontal=True)
         if tc == "Oui":
+            lesion_crane = st.selectbox("Spécificité de la lésion crânienne :", [
+                "Traumatisme fermé (sans fracture apparente)", 
+                "Fracture de la voûte crânienne (linéaire)", 
+                "Fracture de la voûte (embarrure)", 
+                "Fracture de la base du crâne", 
+                "Fracture du massif facial",
+                "Plaie cranio-cérébrale"
+            ])
             glasgow = st.slider("Score de Glasgow à l'admission :", 3, 15, 15)
             dpc = st.number_input("Durée de la perte de connaissance (Heures) :", min_value=0.0)
             deficit = st.text_input("Déficit neurologique associé :")
